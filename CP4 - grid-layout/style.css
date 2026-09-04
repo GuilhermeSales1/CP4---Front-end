@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main.container {
+    padding: 16px;
+    background-color: #101011;
+    height: 100dvh;
+    max-width: 100%;
+    display: grid;
+    grid-template-rows: 1.2fr 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    overflow: hidden;
+    gap: 0 8px;
+}
+
+figure {
+    width: 100%;
+    height: 100%;
+}
+
+.foto {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+}
+
+header.maior {
+    grid-column: 1 / 5;
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+header.maior .foto {
+    height: 100%;
+}
+
+article.quadrado {
+    height: 70%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+article.quadrado p {
+    color: rgb(241, 222, 194);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    margin-bottom: 50px;
+}
+
+article.quadrado button {
+    border: none;
+    background-color: rgb(184, 130, 99);
+    border-radius: 24px;
+    padding: 12px;
+    align-self: flex-start;
+    position: absolute;
+    bottom: 0px;
+}
+
+@media (max-width: 768px) {
+    main.container {
+        grid-template-rows: auto auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        overflow-y: auto;
+        height: auto;
+        min-height: 100dvh;
+    }
+
+    header.maior {
+        grid-column: 1 / 3;
+        height: 200px;
+    }
+
+    .foto {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    main.container {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    header.maior {
+        grid-column: 1 / 2;
+    }
+}
